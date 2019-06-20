@@ -1,0 +1,16 @@
+create table MVC_USER(
+num number(10),
+name varchar2(20),
+id varchar2(20) primary key,
+pw varchar2(20),
+email varchar2(20),
+phone varchar2(20)
+);
+
+create SEQUENCE MVC_USER_seq;
+
+insert into MVC_USER values(MVC_USER_seq.nextval, '¿Â∞°∫Û', 'admin', '1111', 'gabin@gb.com', '010-1230-4567');
+
+select * from MVC_USER;
+
+commit;
