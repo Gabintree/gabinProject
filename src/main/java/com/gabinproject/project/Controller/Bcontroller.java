@@ -10,6 +10,8 @@ import com.gabinproject.project.Command.BCommand;
 import com.gabinproject.project.Command.BContentCommand;
 import com.gabinproject.project.Command.BDeleteCommand;
 import com.gabinproject.project.Command.BListCommand;
+import com.gabinproject.project.Command.BModifyCommand;
+import com.gabinproject.project.Command.BModifyViewCommand;
 import com.gabinproject.project.Command.BReplyCommand;
 import com.gabinproject.project.Command.BReplyViewCommand;
 import com.gabinproject.project.Command.BWriteCommand;
@@ -31,6 +33,8 @@ public class Bcontroller {
 	@RequestMapping("/write_view")
 	public String write_view(Model model) {
 		System.out.println("board_write_view  ¿‘¥œ¥Ÿ.");
+		
+		
 		
 		 return "board_write_view";
 	}
@@ -75,9 +79,20 @@ public class Bcontroller {
 		System.out.println("modify_view()");
 		
 		model.addAttribute("request", request);
-		command = new BReplyViewCommand();
+		command = new BModifyViewCommand();
 		command.execute(model);
 		
+		return "board_modify_view";
+	}
+	
+	@RequestMapping("/modify")
+	public String modify(HttpServletRequest request, Model model) {
+		System.out.println("modify()");
+		
+		model.addAttribute("request", request);
+		command = new BModifyCommand();
+		command.execute(model);
+		 		
 		return "redirect:board_list";
 	}
 			

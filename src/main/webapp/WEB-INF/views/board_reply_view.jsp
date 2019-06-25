@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>board_reply_view</title>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td> 이름 </td>
-				<td> <input type="text" name="bname" value=""></td>
+				<td> <input type="text" name="bname" value="${sessionScope.id}" readOnly></td>
 			</tr>
 			<tr>
 				<td> 제목 </td>

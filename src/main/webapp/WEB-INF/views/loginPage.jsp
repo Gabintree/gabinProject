@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <style>
 table, tr, td {0
@@ -57,12 +57,15 @@ $('document').ready(function(){
  		<tr>
  			<td colspan="2" align="right"><input type ="submit" value="로그인"></td>
  		</tr>
+ 		 
  		
  
  
  
  	</table>
  </form>
+ <hr>
+ <a href="mainPage">메인으로</a>
  
  <%
  session.removeAttribute("msg"); 

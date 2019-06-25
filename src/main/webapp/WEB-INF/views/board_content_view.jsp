@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>board_content_view</title>
 </head>
 <body>
 
@@ -21,15 +21,15 @@
 			</tr>
 			<tr>
 				<td> 이름 </td>
-				<td> <input type="text" name="bname" value="${board_content_view.bname}"></td>
+				<td> <input type="text" name="bname" value="${board_content_view.bname}" readOnly></td>
 			</tr>
 			<tr>
 				<td> 제목 </td>
-				<td> <input type="text" name="btitle" value="${board_content_view.btitle}"></td>
+				<td> <input type="text" name="btitle" value="${board_content_view.btitle}" readOnly></td>
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <textarea rows="10" name="bcontent" >${board_content_view.bcontent}</textarea></td>
+				<td> <textarea rows="10" name="bcontent"  readOnly>${board_content_view.bcontent}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2"> 

@@ -316,7 +316,82 @@ public void delete(String bid) {
 		}
 		
 	}
+	public BDto modify_view(String bid) {
+		BDto dto = null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
 		
+		try {
+			
+			connection = dataSource.getConnection();
+			String query = "SELECT * FROM mvc_board where bid = ?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, Integer.parseInt(bid));
+			resultSet = preparedStatement.executeQuery();
+			
+			if(resultSet.next()) {
+				dto = new BDto();
+				dto.setBid(resultSet.getInt("bid"));
+				dto.setBtitle(resultSet.getString("btitle"));
+				dto.setBname(resultSet.getString("bname"));
+				dto.setBcontent(resultSet.getString("bcontent"));
+				dto.setBdate(resultSet.getTimestamp("bdate"));
+				dto.setBhit(resultSet.getInt("bhit"));
+				dto.setBgroup(resultSet.getInt("bgroup"));
+				dto.setBstep(resultSet.getInt("bstep"));
+				dto.setBindent(resultSet.getInt("bindent"));
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(resultSet != null) resultSet.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+	
+	public BDto modify(String bid, String bname, String btitle, String bcontent) {
+		
+		BDto dto = null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+										
+				
+	try {
+			
+			connection = dataSource.getConnection();
+						
+			String query = "update mvc_board set bname=?, btitle=?, bcontent=? where bid =? ";
+			
+			preparedStatement = connection.prepareStatement(query);
+		
+			preparedStatement.setString(1, bname);
+			preparedStatement.setString(2, btitle);
+			preparedStatement.setString(3, bcontent);
+			preparedStatement.setInt(4, Integer.parseInt(bid));
+			preparedStatement.executeUpdate();
+					
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+	
 
 }
 

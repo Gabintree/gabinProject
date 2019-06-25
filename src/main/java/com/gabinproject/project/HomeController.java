@@ -97,8 +97,24 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/join")
-	public String join(Model model) {
+	public String join(HttpServletRequest request, Model model) {
 		logger.info("/join()");
+	
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String mail = request.getParameter("mail");
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
+		String phone = phone1+"-"+phone2+"-"+phone3;
+		
+		UDao dao = new UDao();
+		dao.join(name, id, pw, mail, phone);
+				
+		HttpSession session = request.getSession();
+		session.setAttribute("msg", "회원가입이 완료되었습니다. 다시 로그인 해주세요.");
+		
 		return "redirect:loginForm";
 	}
 	

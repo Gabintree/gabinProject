@@ -67,6 +67,41 @@ public class UDao {
 		return -2; // 데이터베이스 오류
 	}
 	
+	public void join(String name, String id, String pw, String mail, String phone) {
 
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+				
+	try {
+			
+			connection = dataSource.getConnection();
+			
+			String query = "insert into MVC_USER (num, name, id, pw, email, phone) values(MVC_USER_seq.nextval, ?, ?, ?, ?, ?)";
+			
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, id);
+			preparedStatement.setString(3, pw);
+			preparedStatement.setString(4, mail);
+			preparedStatement.setString(5, phone);
+		
+			int rn = preparedStatement.executeUpdate();
+						
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
+	
+	
+	
 }
 

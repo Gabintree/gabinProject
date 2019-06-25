@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입 신청서</title>
+<title>회원가입</title>
 </head>
 
 <body>
@@ -23,15 +23,15 @@
         </tr>
         <tr>
 		<td>비밀번호</td>
-		<td><input type="text" id="pw" name="pw"></td>
+		<td><input type="password" id="pw" name="pw"></td>
 		</tr>
         <tr>
         <td>이메일</td>
-        <td><input type="mail" id="mail" name="mail">@<input type="mail" id="mail" name="mail"></td>
+        <td><input type="email" id="mail" name="mail"></td>
         </tr>
         <tr>
 		<td>핸드폰번호</td>
-        <td><input type="text" id="phone" name="phone"> - <input type="text" id="phone" name="phone"> - <input type="text" id="phone" name="phone"> </td>
+        <td><input type="text" id="phone" name="phone1"> - <input type="text" id="phone" name="phone2"> - <input type="text" id="phone" name="phone3"> </td>
         </tr>		
 	</table>
 	</fieldset>

@@ -9,21 +9,23 @@
 <body>
 
 	<table width="500" cellpadding="0" cellspacing="0" border="1">
-		<form action="write" method="post">
+		<form action="modify" method="post">
+			<input type="hidden" name="bid" value="${board_modify_view.bid }">
 			<tr>
 				<td> 제목 </td>
-				<td> <input type="text" name="btitle" size = "50"> </td>
+				<td> <input type="text" name="btitle" size = "50" value="${board_modify_view.btitle }"> </td>
 			</tr>
 			<tr>
 				<td> 이름 </td>
-				<td> <input type="text" name="bname" size = "50" value="${sessionScope.id}" readOnly> </td>
+				<td> <input type="text" name="bname" size = "50" value="${board_modify_view.bname }"> </td>
+				
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <textarea name="bcontent" rows="10" ></textarea> </td>
+				<td> <textarea name="bcontent" rows="10" >${board_modify_view.bcontent }</textarea> </td>
 			</tr>
 			<tr >
-				<td colspan="2"> <input type="submit" value="입력"> &nbsp;&nbsp; <a href="board_list">목록보기</a></td>
+				<td colspan="2"> <input type="submit" value="수정"> &nbsp;&nbsp; <a href="board_list">목록보기</a></td>
 			</tr>
 		</form>
 	</table>

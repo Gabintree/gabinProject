@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>board_list</title>
 </head>
 <body>
 		
@@ -29,8 +29,9 @@
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="5"> <a href="write_view">글작성</a> </td>
+			<td colspan="5"> <a href="write_view">글작성</a> <a href="mainPage">메인으로</a> </td>
 		</tr>
 	</table>
+
 </body>
 </html>
