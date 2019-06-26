@@ -4,14 +4,23 @@
 <html>
 <head>
 <meta charset="utf-8">
+<style>
+
+body {
+background-image:url("resources/cloud.png");
+
+
+}
+</style>
 <title>첫 화면 / 메인페이지</title>
 </head>
+
 <body>
 
 가빈이네 홈페이지에 오신 것을 환영합니다. 
 <hr>
 <img src="resources/bearGumi.jpg">
-
+ 
 
 
 <%
