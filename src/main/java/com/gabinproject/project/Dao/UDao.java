@@ -67,7 +67,7 @@ public class UDao {
 		return -2; // 데이터베이스 오류
 	}
 	
-	public void join(String name, String id, String pw, String mail, String phone) {
+	public int join(String name, String id, String pw, String mail, String phone) {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -87,7 +87,10 @@ public class UDao {
 			preparedStatement.setString(5, phone);
 		
 			int rn = preparedStatement.executeUpdate();
-						
+			if(rn > 0) {
+				return 1;
+			}
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -98,6 +101,7 @@ public class UDao {
 				e2.printStackTrace();
 			}
 		}
+		return -1;
 	}
 	
 	

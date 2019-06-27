@@ -5,10 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link rel="stylesheet" type="text/css" href="resources/css/mainPage.css?ver=1.0">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+var msg = '${msg}';
+
+$('document').ready(function(){
+	if(msg != ''){
+		alert(msg);
+	}
+});
+
+</script>
 </head>
-
 <body>
-
+<center>
+	<nav id="navi">
+        <h1><a href="http://localhost:8282/project/"><img src="resources/images/yangach.svg"></a></h1>
+    </nav>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
 	<form action="join" method="post">
 	<fieldset>
 	<legend>회원가입 신청서</legend>
@@ -38,6 +60,6 @@
 	<input type="submit" value="회원가입">
 	</form>
 	
-
+</center>
 </body>
 </html>

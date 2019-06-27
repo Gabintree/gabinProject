@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/css/mainPage.css?ver=1.0">
 <style>
 table, tr, td {0
 border : 1px solid black;
@@ -14,7 +15,10 @@ border : 1px solid black;
 
 </head>
 <body>
-
+<center>
+    <nav id="navi">
+        <h1><a href="http://localhost:8282/project/"><img src="resources/images/yangach.svg"></a></h1>
+    </nav>
 
 <%
 	String id = "";
@@ -31,7 +35,7 @@ border : 1px solid black;
 %>
 <script>
 
-var msg = '${sessionScope.msg}';
+var msg = '${msg}';
 
 $('document').ready(function(){
 	if(msg != ''){
@@ -41,6 +45,12 @@ $('document').ready(function(){
 
 </script>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <p>아이디와 비밀번호를 입력하십시오.</p>
 <hr>
 
@@ -67,8 +77,6 @@ $('document').ready(function(){
  <hr>
  <a href="mainPage">메인으로</a>
  
- <%
- session.removeAttribute("msg"); 
- %>
+ </center>
 </body>
 </html>

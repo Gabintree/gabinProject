@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gabinproject.project.Dao.UDao;
 
@@ -97,7 +98,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/join")
-	public String join(HttpServletRequest request, Model model) {
+	public String join(HttpServletRequest request, RedirectAttributes redirect, Model model) {
 		logger.info("/join()");
 	
 		String name = request.getParameter("name");
@@ -110,14 +111,16 @@ public class HomeController {
 		String phone = phone1+"-"+phone2+"-"+phone3;
 		
 		UDao dao = new UDao();
-		dao.join(name, id, pw, mail, phone);
-				
-		HttpSession session = request.getSession();
-		session.setAttribute("msg", "회원가입이 완료되었습니다. 다시 로그인 해주세요.");
+		int joinOk = dao.join(name, id, pw, mail, phone);
 		
-		return "redirect:loginForm";
+		if(joinOk > 0) {
+			redirect.addFlashAttribute("msg", "회원가입이 완료 되었습니다. 로그인 해주세요.");
+			return "redirect:loginForm";
+		}
+		
+			redirect.addFlashAttribute("msg", "빈 칸이 있습니다. 칸을 다 채워주세요.");
+			return "redirect:joinForm";
 	}
-	
 	
 	
 	

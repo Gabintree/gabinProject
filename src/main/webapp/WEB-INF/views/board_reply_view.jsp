@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>board_reply_view</title>
+<link rel="stylesheet" type="text/css" href="resources/css/mainPage.css?ver=1.0">
 </head>
 <body>
 

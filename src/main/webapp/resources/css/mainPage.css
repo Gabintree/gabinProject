@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css?family=Gaegu&display=swap');
+
+body {
+background-image:url("../images/cloud.png");
+font-family: 'Gaegu', cursive;
+font-size: 25px;
+}
+#navi {
+	order: 1;
+	position:fixed;	
+	width:100vw;
+	z-index:10000;
+}
+#navi h1 {
+	float:center;
+	padding:10px 0 0 15px;
+    margin: 0%;
+    width: 100px;
+}
+#navi img{
+    width: 100%;
+}
+.main-nav {
+	position:relative;
+	float:center;
+	height:100%;
+}
+.main-nav li {
+	list-style:none;	
+	display:inline-block;
+	margin:20px 30px;
+}
+.main-nav a {
+	color: #fff;
+    font-size:20px;
+	text-decoration: none;
+    margin:10px 30px;
+}
+
