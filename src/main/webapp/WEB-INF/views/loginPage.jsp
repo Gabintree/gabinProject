@@ -12,7 +12,13 @@ table, tr, td {0
 border : 1px solid black;
 }
 </style>
+<script>
+var msg = '${msg}';
 
+if(msg!=''){
+	alrert(msg);
+}
+</script>
 </head>
 <body>
 <center>

@@ -6,20 +6,11 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="resources/css/mainPage.css?ver=1.0">
-<style>
-@import url('https://fonts.googleapis.com/css?family=Gaegu&display=swap');
 
-#wrap {
-display: flex;
-flex-flow: column;
-}
-
-</style>
 <title>첫 화면 / 메인페이지</title>
 </head>
 
 <body>
-
 <c:if test="${sessionScope.id != null }">
 	<c:set var="id" value="${sessionScope.id }" />
 </c:if>
@@ -40,7 +31,7 @@ flex-flow: column;
 	          	<li><a href="board_list">방명록</a></li>
         	</c:otherwise>
         </c:choose>		
-	          	
+	    
         </ul>
       </nav>    
 
@@ -51,7 +42,6 @@ flex-flow: column;
 <br>
 <br>
 <br>
-
 <hr>
 가빈이네 홈페이지에 오신 것을 환영합니다. 
 <hr>

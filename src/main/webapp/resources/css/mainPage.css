@@ -5,6 +5,7 @@ body {
 background-image:url("../images/cloud.png");
 font-family: 'Gaegu', cursive;
 font-size: 25px;
+margin: 0;
 }
 #navi {
 	order: 1;

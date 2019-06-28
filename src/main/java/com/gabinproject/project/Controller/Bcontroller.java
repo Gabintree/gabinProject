@@ -1,10 +1,12 @@
 package com.gabinproject.project.Controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gabinproject.project.Command.BCommand;
 import com.gabinproject.project.Command.BContentCommand;
@@ -22,8 +24,15 @@ public class Bcontroller {
 	BCommand command = null;
 	
 	@RequestMapping("/board_list")
-	public String list(Model model) {
+	public String list(HttpServletRequest request, RedirectAttributes redirect, Model model) {
 		System.out.println("리스트를 보여줍니다.");
+		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("id")== null) {
+			redirect.addFlashAttribute("msg", "회원만 접근이 가능합니다. 로그인 해주세요.");
+			 return "redirect:loginForm";
+		}
 		
 		command = new BListCommand();
 		command.execute(model);
